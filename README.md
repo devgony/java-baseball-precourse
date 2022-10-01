@@ -11,7 +11,7 @@
 
 ## Todo
 
-- [ ] feat: architecture design - view(input, output), model(), controller(main)
+- [x] feat: architecture design - view(input, output), domain(), controller(Application)
 - [ ] test: Digit.isEqual should return true if it is equal to my digit
 - [ ] feat: add class Digit {value: int}, fn isEqual(int myDigit) -> bool
 - [ ] test: Digits.match should return Score::{Ball(int), Strike(int), Nothing}
