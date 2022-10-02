@@ -36,6 +36,6 @@
 - [x] refactor: replace pickUniqueNumbersInRange() with pickNumberInRange() + manual logic
 - [x] refactor: reduce indentations with extracting pickUniqueNumberInSubRange
 - [x] test: add a case parseWrongStringGetsException
-- [ ] feat: IllegalArgumentException for wrong input
+- [x] feat: IllegalArgumentException for wrong input
 - [ ] refactor: split play from main to controller
 - [ ] refactor: reduce indentations

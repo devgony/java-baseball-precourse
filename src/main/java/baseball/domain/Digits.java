@@ -12,6 +12,9 @@ public class Digits {
     }
 
     public static Digits parse(String input) {
+        if (input.length() != 3) {
+            throw new IllegalArgumentException("input should be 3 digits.");
+        }
         Digit[] digits = new Digit[3];
         for (int i = 0; i < input.length(); i++) {
             digits[i] = new Digit(Character.getNumericValue(input.charAt(i)));
