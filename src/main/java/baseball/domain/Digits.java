@@ -3,27 +3,30 @@ package baseball.domain;
 import java.util.Arrays;
 
 public class Digits {
-    private Digit[] values;
+    private Digit[] digits;
 
     public Digits(Digit[] digits) {
-        this.values = digits;
+        this.digits = digits;
     }
 
     public Score match(Digit[] myDigits) {
         Score score = new Score(0, 0);
         for (int i = 0; i < myDigits.length; i++) {
-            for (int j = 0; j < values.length; j++) {
-                if (isStrike(values[j], myDigits[i], i, j)) {
-                    score = score.addStrike();
-                    continue;
-                } else if (isBall(values[j], myDigits[i])) {
-                    score = score.addBall();
-                    continue;
-                }
-
+            for (int j = 0; j < digits.length; j++) {
+                score = renewScore(myDigits, score, i, j);
+                continue;
             }
         }
 
+        return score;
+    }
+
+    private Score renewScore(Digit[] myDigits, Score score, int myDigitIndex, int digitIndex) {
+        if (isStrike(digits[digitIndex], myDigits[myDigitIndex], myDigitIndex, digitIndex)) {
+            return score.addStrike();
+        } else if (isBall(digits[digitIndex], myDigits[myDigitIndex])) {
+            return score.addBall();
+        }
         return score;
     }
 
@@ -40,18 +43,18 @@ public class Digits {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Digits digits = (Digits) o;
-        return Arrays.equals(values, digits.values);
+        return Arrays.equals(this.digits, digits.digits);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(values);
+        return Arrays.hashCode(digits);
     }
 
     @Override
     public String toString() {
         return "Digits{" +
-                "values=" + Arrays.toString(values) +
+                "values=" + Arrays.toString(digits) +
                 '}';
     }
 }
