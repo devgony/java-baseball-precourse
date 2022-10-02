@@ -28,6 +28,7 @@ public class Digits {
     }
 
     public Score match(Digits inputDigits) {
+        System.out.println(this);
         Digit[] inputDigitArray = inputDigits.digits;
         Score score = new Score(0, 0);
         for (int inputDigitIndex = 0; inputDigitIndex < inputDigitArray.length; inputDigitIndex++) {
@@ -78,7 +79,7 @@ public class Digits {
     @Override
     public String toString() {
         return "Digits{" +
-                "values=" + Arrays.toString(digits) +
+                "digits=" + Arrays.toString(digits) +
                 '}';
     }
 }
