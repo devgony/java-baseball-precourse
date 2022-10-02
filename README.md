@@ -29,7 +29,7 @@
 - [x] feat: implement loop in controller
 - [x] test: add ScoreTest - isDoneIfThreeStrike
 - [x] feat: implement Score.isDone()
-- [ ] feat: implement main logic in Application
+- [x] feat: implement main logic(1 cycle) in Application with recursive play(Digit)
 - [ ] feat: get player input 3 times
 - [ ] feat: input 3 times => ask quit or replay
 - [ ] feat: IllegalArgumentException for wrong input

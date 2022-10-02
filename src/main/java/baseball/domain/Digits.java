@@ -18,7 +18,7 @@ public class Digits {
         return new Digits(digits);
     }
 
-    public Digits generate() {
+    public static Digits generate() {
         Digit[] digits = new Digit[3];
         for (int i = 0; i < 3; i++) {
             digits[i] = (Digit.generate());
