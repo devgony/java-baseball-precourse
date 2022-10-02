@@ -19,8 +19,8 @@
 - [x] test: Digits.match should return Score
 - [x] feat: implement first class collection Digits, fn match - if value and index are equal => strike, else if value
   only equal => ball
-- [ ] test: add a case for yield output
-- [ ] feat: implement
+- [x] test: add a case for Score.yield output
+- [ ] feat: implement Score.yield for each cases
 - [ ] feat: fn generate_digits() -> List<Digit>: random digits generator
 - [ ] feat: get player input 3 times
 - [ ] feat: input 3 times => ask quit or replay

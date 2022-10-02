@@ -20,4 +20,32 @@ public class ScoreTest {
         Score expected = new Score(1, 0);
         assertThat(actual).isEqualTo(expected);
     }
+
+    @Test
+    void yieldNothing() {
+        Score score = new Score(0, 0);
+        String actual = score.yield();
+        assertThat(actual).isEqualTo("Nothing");
+    }
+
+    @Test
+    void yieldThreeBall() {
+        Score score = new Score(3, 0);
+        String actual = score.yield();
+        assertThat(actual).isEqualTo("3 Ball");
+    }
+
+    @Test
+    void yieldThreeStrike() {
+        Score score = new Score(0, 3);
+        String actual = score.yield();
+        assertThat(actual).isEqualTo("3 Strike");
+    }
+
+    @Test
+    void yieldOneBallOneStrike() {
+        Score score = new Score(1, 1);
+        String actual = score.yield();
+        assertThat(actual).isEqualTo("1 Ball 1 Strike");
+    }
 }
