@@ -31,4 +31,12 @@ public class Score {
     public int hashCode() {
         return Objects.hash(ball, strike);
     }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "ball=" + ball +
+                ", strike=" + strike +
+                '}';
+    }
 }
