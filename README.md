@@ -34,4 +34,7 @@
 - [x] feat: 3 strike => scanCommand: 1) replay or 2) quit
 - [x] fix: Digits.generate should return unique 3 digits
 - [x] refactor: replace pickUniqueNumbersInRange() with pickNumberInRange() + manual logic
+- [x] refactor: reduce indentations with extracting pickUniqueNumberInSubRange
+- [ ] refactor: split play from main to controller
+- [ ] refactor: reduce indentations
 - [ ] feat: IllegalArgumentException for wrong input

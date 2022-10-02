@@ -21,34 +21,34 @@ public class Digits {
 
     public static Digits generate() {
         Digit[] digits = new Digit[3];
-        int a = pickNumberInRange(0, 9);
-        int b, c;
-        if (a == 0) {
-            b = pickNumberInRange(a + 1, 9);
-            if (b == 0) {
-                c = pickNumberInRange(b + 1, 9);
-            }
-            if (b == 9) {
-                c = pickNumberInRange(a + 1, b - 1);
-            }
+        int first = pickNumberInRange(0, 9);
+        int second, third;
+        if (first == 0) {
+            second = pickNumberInRange(first + 1, 9);
+            third = pickUniqueNumberInSubrange(second, first + 1, 9);
         }
-        if (a == 9) {
-            b = pickNumberInRange(0, a - 1);
-            if (b == 0) {
-                c = pickNumberInRange(b + 1, a - 1);
-            }
-            if (b == 9) {
-                c = pickNumberInRange(0, b - 1);
-            }
+        if (first == 9) {
+            second = pickNumberInRange(0, first - 1);
+            third = pickUniqueNumberInSubrange(second, 0, first - 1);
         }
-        b = pickNumberInRange(0, a - 1);
-        c = pickNumberInRange(b + 1, 9);
+        second = pickNumberInRange(0, first - 1);
+        third = pickNumberInRange(second + 1, 9);
 
-        digits[0] = new Digit(a);
-        digits[1] = new Digit(b);
-        digits[2] = new Digit(c);
+        digits[0] = new Digit(first);
+        digits[1] = new Digit(second);
+        digits[2] = new Digit(third);
 
         return new Digits(digits);
+    }
+
+    private static int pickUniqueNumberInSubrange(int second, int first, int endInclusive) {
+        if (second == 0) {
+            return pickNumberInRange(second + 1, endInclusive);
+        }
+        if (second == 9) {
+            return pickNumberInRange(first, second - 1);
+        }
+        throw new RuntimeException("Unreachable");
     }
 
     public Score match(Digits inputDigits) {
