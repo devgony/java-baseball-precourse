@@ -32,4 +32,5 @@
 - [x] feat: implement main logic(1 cycle) in Application with recursive play(Digit)
 - [x] feat: implement Input.scanCommand
 - [x] feat: 3 strike => scanCommand: 1) replay or 2) quit
+- [x] fix: Digits.generate should return unique 3 digits
 - [ ] feat: IllegalArgumentException for wrong input

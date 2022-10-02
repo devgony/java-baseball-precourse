@@ -1,6 +1,9 @@
 package baseball.domain;
 
 import java.util.Arrays;
+import java.util.List;
+
+import static camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange;
 
 
 public class Digits {
@@ -20,15 +23,18 @@ public class Digits {
 
     public static Digits generate() {
         Digit[] digits = new Digit[3];
+        List<Integer> numbers = pickUniqueNumbersInRange(0, 9, 3);
         for (int i = 0; i < 3; i++) {
-            digits[i] = (Digit.generate());
+            digits[i] = new Digit(numbers.get(i));
         }
         return new Digits(digits);
 
     }
 
     public Score match(Digits inputDigits) {
+        // TODO: remove debug only print
         System.out.println(this);
+
         Digit[] inputDigitArray = inputDigits.digits;
         Score score = new Score(0, 0);
         for (int inputDigitIndex = 0; inputDigitIndex < inputDigitArray.length; inputDigitIndex++) {
