@@ -1,10 +1,8 @@
 package baseball.domain;
 
 import java.util.Arrays;
-import java.util.List;
 
-import static camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange;
-
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class Digits {
     private Digit[] digits;
@@ -23,12 +21,34 @@ public class Digits {
 
     public static Digits generate() {
         Digit[] digits = new Digit[3];
-        List<Integer> numbers = pickUniqueNumbersInRange(0, 9, 3);
-        for (int i = 0; i < 3; i++) {
-            digits[i] = new Digit(numbers.get(i));
+        int a = pickNumberInRange(0, 9);
+        int b, c;
+        if (a == 0) {
+            b = pickNumberInRange(a + 1, 9);
+            if (b == 0) {
+                c = pickNumberInRange(b + 1, 9);
+            }
+            if (b == 9) {
+                c = pickNumberInRange(a + 1, b - 1);
+            }
         }
-        return new Digits(digits);
+        if (a == 9) {
+            b = pickNumberInRange(0, a - 1);
+            if (b == 0) {
+                c = pickNumberInRange(b + 1, a - 1);
+            }
+            if (b == 9) {
+                c = pickNumberInRange(0, b - 1);
+            }
+        }
+        b = pickNumberInRange(0, a - 1);
+        c = pickNumberInRange(b + 1, 9);
 
+        digits[0] = new Digit(a);
+        digits[1] = new Digit(b);
+        digits[2] = new Digit(c);
+
+        return new Digits(digits);
     }
 
     public Score match(Digits inputDigits) {

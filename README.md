@@ -33,4 +33,5 @@
 - [x] feat: implement Input.scanCommand
 - [x] feat: 3 strike => scanCommand: 1) replay or 2) quit
 - [x] fix: Digits.generate should return unique 3 digits
+- [x] refactor: replace pickUniqueNumbersInRange() with pickNumberInRange() + manual logic
 - [ ] feat: IllegalArgumentException for wrong input
