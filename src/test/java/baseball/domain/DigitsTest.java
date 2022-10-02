@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class DigitsTest {
     @Test
@@ -11,6 +12,11 @@ public class DigitsTest {
         Digits actual = Digits.parse("123");
         Digits expected = new Digits(new Digit[]{new Digit(1), new Digit(2), new Digit(3)});
         assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void parseWrongStringGetsException() {
+        assertThatThrownBy(() -> Digits.parse("1234")).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
