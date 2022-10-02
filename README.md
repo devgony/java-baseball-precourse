@@ -16,8 +16,8 @@
 - [x] feat: add class Digit {value: int}, fn isEqual(int input) -> bool
 - [x] test: add cases for Score.{addStrike, addBall}
 - [x] feat: implement Score.{addStrike, addBall} to return renewed Score
-- [ ] test: Digits.match should return Score::{type: ScoreType, value: int}
-- [ ] feat: implement Score, ScoreType, Digits.match
+- [x] test: Digits.match should return Score
+- [ ] feat: implement Digits.match
 - [ ] feat: first class collection Digits {values: List<Digit>}, fn match(myDigits: List<Digit>) -> Score
 - [ ] feat: fn generate_digits() -> List<Digit>: random digits generator
 - [ ] feat: get player input 3 times
