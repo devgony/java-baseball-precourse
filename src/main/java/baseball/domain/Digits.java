@@ -11,13 +11,18 @@ public class Digits {
 
     public Score match(Digit[] myDigits) {
         Score score = new Score(0, 0);
-        for (int i = 0; i < myDigits.length; i++) {
-            for (int j = 0; j < digits.length; j++) {
-                score = renewScore(myDigits, score, i, j);
-                continue;
-            }
+        for (int myDigitIndex = 0; myDigitIndex < myDigits.length; myDigitIndex++) {
+            score = renewScoreWithDigits(myDigits, score, myDigitIndex);
         }
 
+        return score;
+    }
+
+    private Score renewScoreWithDigits(Digit[] myDigits, Score score, int myDigitIndex) {
+        for (int digitIndex = 0; digitIndex < digits.length; digitIndex++) {
+            score = renewScore(myDigits, score, myDigitIndex, digitIndex);
+            continue;
+        }
         return score;
     }
 
@@ -34,8 +39,8 @@ public class Digits {
         return digit.equals(myDigit);
     }
 
-    private boolean isStrike(Digit digit, Digit myDigit, int i, int j) {
-        return isBall(digit, myDigit) && i == j;
+    private boolean isStrike(Digit digit, Digit myDigit, int myDigitIndex, int digitIndex) {
+        return isBall(digit, myDigit) && myDigitIndex == digitIndex;
     }
 
     @Override
