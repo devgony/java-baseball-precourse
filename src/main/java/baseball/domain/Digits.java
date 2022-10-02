@@ -27,38 +27,38 @@ public class Digits {
 
     }
 
-    public Score match(Digit[] myDigits) {
+    public Score match(Digit[] inputDigits) {
         Score score = new Score(0, 0);
-        for (int myDigitIndex = 0; myDigitIndex < myDigits.length; myDigitIndex++) {
-            score = renewScoreWithDigits(myDigits, score, myDigitIndex);
+        for (int inputDigitIndex = 0; inputDigitIndex < inputDigits.length; inputDigitIndex++) {
+            score = renewScoreWithDigits(inputDigits, score, inputDigitIndex);
         }
 
         return score;
     }
 
-    private Score renewScoreWithDigits(Digit[] myDigits, Score score, int myDigitIndex) {
+    private Score renewScoreWithDigits(Digit[] inputDigits, Score score, int inputDigitIndex) {
         for (int digitIndex = 0; digitIndex < digits.length; digitIndex++) {
-            score = renewScore(myDigits, score, myDigitIndex, digitIndex);
+            score = renewScore(inputDigits, score, inputDigitIndex, digitIndex);
             continue;
         }
         return score;
     }
 
-    private Score renewScore(Digit[] myDigits, Score score, int myDigitIndex, int digitIndex) {
-        if (isStrike(digits[digitIndex], myDigits[myDigitIndex], myDigitIndex, digitIndex)) {
+    private Score renewScore(Digit[] inputDigits, Score score, int inputDigitIndex, int digitIndex) {
+        if (isStrike(digits[digitIndex], inputDigits[inputDigitIndex], inputDigitIndex, digitIndex)) {
             return score.addStrike();
-        } else if (isBall(digits[digitIndex], myDigits[myDigitIndex])) {
+        } else if (isBall(digits[digitIndex], inputDigits[inputDigitIndex])) {
             return score.addBall();
         }
         return score;
     }
 
-    private boolean isBall(Digit digit, Digit myDigit) {
-        return digit.equals(myDigit);
+    private boolean isBall(Digit digit, Digit inputDigit) {
+        return digit.equals(inputDigit);
     }
 
-    private boolean isStrike(Digit digit, Digit myDigit, int myDigitIndex, int digitIndex) {
-        return isBall(digit, myDigit) && myDigitIndex == digitIndex;
+    private boolean isStrike(Digit digit, Digit inputDigit, int inputDigitIndex, int digitIndex) {
+        return isBall(digit, inputDigit) && inputDigitIndex == digitIndex;
     }
 
     @Override
