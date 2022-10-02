@@ -7,11 +7,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DigitsTest {
     @Test
-    void shouldReturnThreeStrike() {
-        Digit[] answerDigits = new Digit[]{new Digit(1), new Digit(2), new Digit(3)};
-        Digit[] myDigits = new Digit[]{new Digit(1), new Digit(2), new Digit(3)};
-        Digits digits = new Digits(answerDigits);
-        assertThat(digits.match(myDigits)).isEqualTo(new Score(0, 3));
+    void parseStringToDigits() {
+        Digits actual = Digits.parse("123");
+        Digits expected = new Digits(new Digit[]{new Digit(1), new Digit(2), new Digit(3)});
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
@@ -20,6 +19,14 @@ public class DigitsTest {
         Digit[] myDigits = new Digit[]{new Digit(3), new Digit(1), new Digit(2)};
         Digits digits = new Digits(answerDigits);
         assertThat(digits.match(myDigits)).isEqualTo(new Score(3, 0));
+    }
+
+    @Test
+    void shouldReturnThreeStrike() {
+        Digit[] answerDigits = new Digit[]{new Digit(1), new Digit(2), new Digit(3)};
+        Digit[] myDigits = new Digit[]{new Digit(1), new Digit(2), new Digit(3)};
+        Digits digits = new Digits(answerDigits);
+        assertThat(digits.match(myDigits)).isEqualTo(new Score(0, 3));
     }
 
     @Test
