@@ -19,13 +19,20 @@ public class Game {
         Output.print(score.yield());
         if (score.isDone()) {
             int command = Input.scanCommand();
-            if (command == 2) {
-                return;
-            }
-            Game game = new Game();
-            game.play();
+            replay(doesReplay(command));
             return;
         }
         play();
+    }
+
+    private boolean doesReplay(int command) {
+        return command == 1;
+    }
+
+    private void replay(boolean doesReplay) {
+        if (doesReplay) {
+            Game game = new Game();
+            game.play();
+        }
     }
 }

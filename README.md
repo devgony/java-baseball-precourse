@@ -38,4 +38,4 @@
 - [x] test: add a case parseWrongStringGetsException
 - [x] feat: IllegalArgumentException for wrong input
 - [x] refactor: split play() from main to controller.Game.play()
-- [ ] refactor: reduce indentations
+- [x] refactor: reduce indentations with extracting Game.replay()
