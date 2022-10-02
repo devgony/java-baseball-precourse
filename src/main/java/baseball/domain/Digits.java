@@ -13,10 +13,10 @@ public class Digits {
         Score score = new Score(0, 0);
         for (int i = 0; i < myDigits.length; i++) {
             for (int j = 0; j < values.length; j++) {
-                if (values[j].equals(myDigits[i]) && i == j) {
+                if (isStrike(values[j], myDigits[i], i, j)) {
                     score = score.addStrike();
                     continue;
-                } else if (values[j].equals(myDigits[i])) {
+                } else if (isBall(values[j], myDigits[i])) {
                     score = score.addBall();
                     continue;
                 }
@@ -25,6 +25,14 @@ public class Digits {
         }
 
         return score;
+    }
+
+    private boolean isBall(Digit digit, Digit myDigit) {
+        return digit.equals(myDigit);
+    }
+
+    private boolean isStrike(Digit digit, Digit myDigit, int i, int j) {
+        return isBall(digit, myDigit) && i == j;
     }
 
     @Override
