@@ -2,11 +2,21 @@ package baseball.domain;
 
 import java.util.Arrays;
 
+
 public class Digits {
     private Digit[] digits;
 
     public Digits(Digit[] digits) {
         this.digits = digits;
+    }
+
+    public Digits generate() {
+        Digit[] digits = new Digit[3];
+        for (int i = 0; i < 3; i++) {
+            digits[i] = (Digit.generate());
+        }
+        return new Digits(digits);
+
     }
 
     public Score match(Digit[] myDigits) {
