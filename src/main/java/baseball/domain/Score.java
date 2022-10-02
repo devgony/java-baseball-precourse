@@ -39,4 +39,17 @@ public class Score {
                 ", strike=" + strike +
                 '}';
     }
+
+    public String yield() {
+        if (ball == 0 && strike == 0) {
+            return "Nothing";
+        }
+        if (strike == 0) {
+            return ball + " Ball";
+        }
+        if (ball == 0) {
+            return strike + " Strike";
+        }
+        return ball + " Ball " + strike + " Strike";
+    }
 }
