@@ -52,4 +52,11 @@ public class Score {
         }
         return ball + " Ball " + strike + " Strike";
     }
+
+    public boolean isDone() {
+        if (this.strike == 3) {
+            return true;
+        }
+        return false;
+    }
 }
