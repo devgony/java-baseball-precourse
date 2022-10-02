@@ -14,7 +14,10 @@
 - [x] feat: architecture design - view(input, output), domain(), controller(Application)
 - [x] test: Digit.isEqual should return true if it is equal to my digit
 - [x] feat: add class Digit {value: int}, fn isEqual(int input) -> bool
-- [ ] test: Digits.match should return Score::{Ball(int), Strike(int), Nothing}
+- [x] test: add cases for Score.{addStrike, addBall}
+- [ ] feat: implement Score.{addStrike, addBall} to return renewed Score
+- [ ] test: Digits.match should return Score::{type: ScoreType, value: int}
+- [ ] feat: implement Score, ScoreType, Digits.match
 - [ ] feat: first class collection Digits {values: List<Digit>}, fn match(myDigits: List<Digit>) -> Score
 - [ ] feat: fn generate_digits() -> List<Digit>: random digits generator
 - [ ] feat: get player input 3 times
