@@ -78,7 +78,8 @@ public class Digits {
     private Score renewScore(Digit[] inputDigits, Score score, int inputDigitIndex, int digitIndex) {
         if (isStrike(digits[digitIndex], inputDigits[inputDigitIndex], inputDigitIndex, digitIndex)) {
             return score.addStrike();
-        } else if (isBall(digits[digitIndex], inputDigits[inputDigitIndex])) {
+        }
+        if (isBall(digits[digitIndex], inputDigits[inputDigitIndex])) {
             return score.addBall();
         }
         return score;
