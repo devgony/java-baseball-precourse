@@ -25,7 +25,7 @@
 - [x] feat: implement Input.scan()
 - [x] feat: implement main login in Application
 - [x] test: add a case - parseStringToDigits
-- [ ] feat: implement Digits.parse(String input) -> Digits
+- [x] feat: implement Digits.parse(String input) -> Digits
 - [ ] feat: get player input 3 times
 - [ ] feat: input 3 times => ask quit or replay
 - [ ] feat: IllegalArgumentException for wrong input

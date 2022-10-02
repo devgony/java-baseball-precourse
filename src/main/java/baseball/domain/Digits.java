@@ -10,6 +10,14 @@ public class Digits {
         this.digits = digits;
     }
 
+    public static Digits parse(String input) {
+        Digit[] digits = new Digit[3];
+        for (int i = 0; i < input.length(); i++) {
+            digits[i] = new Digit(Character.getNumericValue(input.charAt(i)));
+        }
+        return new Digits(digits);
+    }
+
     public Digits generate() {
         Digit[] digits = new Digit[3];
         for (int i = 0; i < 3; i++) {

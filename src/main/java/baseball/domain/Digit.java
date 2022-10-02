@@ -29,4 +29,10 @@ public class Digit {
         return Objects.hash(value);
     }
 
+    @Override
+    public String toString() {
+        return "Digit{" +
+                "value=" + value +
+                '}';
+    }
 }
