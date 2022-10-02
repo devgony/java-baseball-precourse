@@ -48,4 +48,11 @@ public class ScoreTest {
         String actual = score.yield();
         assertThat(actual).isEqualTo("1 Ball 1 Strike");
     }
+
+    @Test
+    void isDoneIfThreeStrike() {
+        Score score = new Score(0, 3);
+        boolean actual = score.isDone();
+        assertThat(actual).isTrue();
+    }
 }

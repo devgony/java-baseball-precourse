@@ -26,6 +26,9 @@
 - [x] test: add a case - parseStringToDigits
 - [x] feat: implement Digits.parse(String input) -> Digits
 - [x] feat: implement Output.print()
+- [x] feat: implement loop in controller
+- [x] test: add ScoreTest - isDoneIfThreeStrike
+- [ ] feat: implement Score.isDone()
 - [ ] feat: implement main logic in Application
 - [ ] feat: get player input 3 times
 - [ ] feat: input 3 times => ask quit or replay
