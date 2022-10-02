@@ -30,6 +30,6 @@
 - [x] test: add ScoreTest - isDoneIfThreeStrike
 - [x] feat: implement Score.isDone()
 - [x] feat: implement main logic(1 cycle) in Application with recursive play(Digit)
-- [ ] feat: get player input 3 times
-- [ ] feat: input 3 times => ask quit or replay
+- [x] feat: implement Input.scanCommand
+- [x] feat: 3 strike => scanCommand: 1) replay or 2) quit
 - [ ] feat: IllegalArgumentException for wrong input

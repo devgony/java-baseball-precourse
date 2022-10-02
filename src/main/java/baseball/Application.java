@@ -12,12 +12,17 @@ public class Application {
     }
 
     private static void play(Digits digits) {
-        String input = Input.scan();
+        String input = Input.scanDigits();
         Digits inputDigits = Digits.parse(input);
         Score score = digits.match(inputDigits);
         Output.print(score.yield());
         if (score.isDone()) {
-            Output.print("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+            int command = Input.scanCommand();
+            if (command == 2) {
+                return;
+            }
+            Digits newDigits = Digits.generate();
+            play(newDigits);
             return;
         }
         play(digits);
