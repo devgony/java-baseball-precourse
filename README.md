@@ -23,9 +23,10 @@
 - [x] feat: implement Score.yield for each cases
 - [x] feat: fn generate_digits() -> Digit[3]: random digits generator
 - [x] feat: implement Input.scan()
-- [x] feat: implement main login in Application
 - [x] test: add a case - parseStringToDigits
 - [x] feat: implement Digits.parse(String input) -> Digits
+- [x] feat: implement Output.print()
+- [ ] feat: implement main logic in Application
 - [ ] feat: get player input 3 times
 - [ ] feat: input 3 times => ask quit or replay
 - [ ] feat: IllegalArgumentException for wrong input
