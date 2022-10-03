@@ -35,7 +35,7 @@ public class DigitsTest {
     @Test
     void shouldReturnThreeStrike() {
         Digits digits = Digits.build(1, 2, 3);
-        Digits inputDigits = Digits.build(3, 1, 2);
+        Digits inputDigits = Digits.build(1, 2, 3);
         assertThat(digits.match(inputDigits)).isEqualTo(new Score(0, 3));
     }
 
