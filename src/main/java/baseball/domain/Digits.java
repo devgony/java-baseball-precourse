@@ -35,15 +35,24 @@ public class Digits {
         int first = pickNumberInRange(0, 9);
         int second = pickNumberInRange(0, first - 1);
         int third = pickNumberInRange(second + 1, 9);
+        int[] renewed = renewDuplicated(first, second, third);
+        second = renewed[0];
+        third = renewed[1];
+        return build(first, second, third);
+    }
+
+    private static int[] renewDuplicated(int first, int second, int third) {
+        int newSecond = second;
+        int newThird = third;
         if (first == 0) {
-            second = pickNumberInRange(first + 1, 9);
-            third = pickUniqueNumberInSubrange(second, first + 1, 9);
+            newSecond = pickNumberInRange(first + 1, 9);
+            newThird = pickUniqueNumberInSubrange(second, first + 1, 9);
         }
         if (first == 9) {
-            second = pickNumberInRange(0, first - 1);
-            third = pickUniqueNumberInSubrange(second, 0, first - 1);
+            newSecond = pickNumberInRange(0, first - 1);
+            newThird = pickUniqueNumberInSubrange(second, 0, first - 1);
         }
-        return build(first, second, third);
+        return new int[]{newSecond, newThird};
     }
 
     private static int pickUniqueNumberInSubrange(int second, int first, int endInclusive) {

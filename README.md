@@ -41,3 +41,4 @@
 - [x] refactor: reduce indentations with extracting Game.replay()
 - [x] test: add a case - buildIntegersToDigits, adjust Digits.build() to other cases
 - [x] feat: extract Digits.build()
+- [x] refactor: extract Digits.renewDuplicated()
