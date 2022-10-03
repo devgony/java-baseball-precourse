@@ -44,3 +44,5 @@
 - [x] refactor: extract Digits.renewDuplicated()
 - [x] test: add CommandTest{shouldBeREPLAY, shouldBeQUIT, shouldThrowException, replayIsTrueQuitIsFalse}
 - [x] feat: implement enum Command {of(), isReplay()}
+- [x] test: add Digit case {shouldParseDigitCharToDigit, shouldThrowExceptionWithNonDigitChar}
+- 
