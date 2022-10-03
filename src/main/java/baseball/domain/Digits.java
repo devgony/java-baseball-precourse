@@ -72,9 +72,6 @@ public class Digits {
     }
 
     public Score match(Digits inputDigits) {
-        // TODO: remove debug only print
-        System.out.println(this);
-
         Digit[] inputDigitArray = inputDigits.digits;
         Score score = new Score(0, 0);
         for (int inputDigitIndex = 0; inputDigitIndex < inputDigitArray.length; inputDigitIndex++) {
