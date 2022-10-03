@@ -11,6 +11,15 @@ public class Digits {
         this.digits = digits;
     }
 
+    public static Digits build(int first, int second, int third) {
+        Digit[] digits = new Digit[]{
+                new Digit(first),
+                new Digit(second),
+                new Digit(third)
+        };
+        return new Digits(digits);
+    }
+
     public static Digits parse(String input) {
         if (input.length() != 3) {
             throw new IllegalArgumentException("input should be 3 digits.");
@@ -23,9 +32,9 @@ public class Digits {
     }
 
     public static Digits generate() {
-        Digit[] digits = new Digit[3];
         int first = pickNumberInRange(0, 9);
-        int second, third;
+        int second = pickNumberInRange(0, first - 1);
+        int third = pickNumberInRange(second + 1, 9);
         if (first == 0) {
             second = pickNumberInRange(first + 1, 9);
             third = pickUniqueNumberInSubrange(second, first + 1, 9);
@@ -34,14 +43,7 @@ public class Digits {
             second = pickNumberInRange(0, first - 1);
             third = pickUniqueNumberInSubrange(second, 0, first - 1);
         }
-        second = pickNumberInRange(0, first - 1);
-        third = pickNumberInRange(second + 1, 9);
-
-        digits[0] = new Digit(first);
-        digits[1] = new Digit(second);
-        digits[2] = new Digit(third);
-
-        return new Digits(digits);
+        return build(first, second, third);
     }
 
     private static int pickUniqueNumberInSubrange(int second, int first, int endInclusive) {
