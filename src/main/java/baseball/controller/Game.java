@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.domain.Command;
 import baseball.domain.Digits;
 import baseball.domain.Score;
 import baseball.view.Input;
@@ -18,15 +19,11 @@ public class Game {
         Score score = digits.match(inputDigits);
         Output.print(score.yield());
         if (score.isDone()) {
-            int command = Input.scanCommand();
-            replay(doesReplay(command));
+            Command command = Command.of(Input.scanCommand());
+            replay(command.isReplay());
             return;
         }
         play();
-    }
-
-    private boolean doesReplay(int command) {
-        return command == 1;
     }
 
     private void replay(boolean doesReplay) {

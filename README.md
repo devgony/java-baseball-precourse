@@ -43,4 +43,4 @@
 - [x] feat: extract Digits.build()
 - [x] refactor: extract Digits.renewDuplicated()
 - [x] test: add CommandTest{shouldBeREPLAY, shouldBeQUIT, shouldThrowException, replayIsTrueQuitIsFalse}
-- [ ] feat: implement enum Command {of(), isReplay()}
+- [x] feat: implement enum Command {of(), isReplay()}
