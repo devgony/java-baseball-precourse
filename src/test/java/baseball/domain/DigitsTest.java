@@ -7,6 +7,12 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class DigitsTest {
     @Test
+    void digitsMoreOrLessThanThreeThrowException() {
+        assertThatThrownBy(() -> new Digits(new Digit[]{new Digit(1), new Digit(2), new Digit(3), new Digit(4)})).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new Digits(new Digit[]{new Digit(1), new Digit(2)})).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     void buildIntegersToDigits() {
         Digits actual = Digits.build(1, 2, 3);
         Digits expected = new Digits(new Digit[]{new Digit(1), new Digit(2), new Digit(3)});
