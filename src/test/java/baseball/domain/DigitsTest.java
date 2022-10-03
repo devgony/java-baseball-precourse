@@ -23,6 +23,7 @@ public class DigitsTest {
     @Test
     void parseWrongStringGetsException() {
         assertThatThrownBy(() -> Digits.parse("1234")).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> Digits.parse("12a")).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

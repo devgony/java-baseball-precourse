@@ -22,14 +22,15 @@ public class Digits {
 
     public static Digits parse(String input) {
         if (input.length() != 3) {
-            throw new IllegalArgumentException("input should be 3 digits.");
+            throw new IllegalArgumentException("input should be 3 digits but: " + input);
         }
         Digit[] digits = new Digit[3];
         for (int i = 0; i < input.length(); i++) {
-            digits[i] = new Digit(Character.getNumericValue(input.charAt(i)));
+            digits[i] = Digit.parse(input.charAt(i));
         }
         return new Digits(digits);
     }
+
 
     public static Digits generate() {
         int first = pickNumberInRange(0, 9);

@@ -45,4 +45,4 @@
 - [x] test: add CommandTest{shouldBeREPLAY, shouldBeQUIT, shouldThrowException, replayIsTrueQuitIsFalse}
 - [x] feat: implement enum Command {of(), isReplay()}
 - [x] test: add Digit case {shouldParseDigitCharToDigit, shouldThrowExceptionWithNonDigitChar}
-- 
+- [x] rector: split Digits.parse and Digit.parse 

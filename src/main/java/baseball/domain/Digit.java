@@ -9,6 +9,15 @@ public class Digit {
         this.value = value;
     }
 
+    public static Digit parse(char digitChar) {
+        try {
+            int digit = Integer.parseInt(Character.toString(digitChar));
+            return new Digit(digit);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("input should be digit but: " + digitChar);
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
