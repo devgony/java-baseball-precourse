@@ -25,28 +25,28 @@ public class ScoreTest {
     void yieldNothing() {
         Score score = new Score(0, 0);
         String actual = score.yield();
-        assertThat(actual).isEqualTo("Nothing");
+        assertThat(actual).isEqualTo("낫싱");
     }
 
     @Test
     void yieldThreeBall() {
         Score score = new Score(3, 0);
         String actual = score.yield();
-        assertThat(actual).isEqualTo("3 Ball");
+        assertThat(actual).isEqualTo("3볼");
     }
 
     @Test
     void yieldThreeStrike() {
         Score score = new Score(0, 3);
         String actual = score.yield();
-        assertThat(actual).isEqualTo("3 Strike");
+        assertThat(actual).isEqualTo("3스트라이크");
     }
 
     @Test
     void yieldOneBallOneStrike() {
         Score score = new Score(1, 1);
         String actual = score.yield();
-        assertThat(actual).isEqualTo("1 Ball 1 Strike");
+        assertThat(actual).isEqualTo("1볼 1스트라이크");
     }
 
     @Test
