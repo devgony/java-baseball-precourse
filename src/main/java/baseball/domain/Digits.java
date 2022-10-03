@@ -8,7 +8,14 @@ public class Digits {
     private Digit[] digits;
 
     public Digits(Digit[] digits) {
+        validate(digits.length, "the length of digits should be 3 but: " + digits.length);
         this.digits = digits;
+    }
+
+    private static void validate(int length, String payload) {
+        if (length != 3) {
+            throw new IllegalArgumentException(payload);
+        }
     }
 
     public static Digits build(int first, int second, int third) {
@@ -21,9 +28,7 @@ public class Digits {
     }
 
     public static Digits parse(String input) {
-        if (input.length() != 3) {
-            throw new IllegalArgumentException("input should be 3 digits but: " + input);
-        }
+        validate(input.length(), "input should be 3 digits but: " + input);
         Digit[] digits = new Digit[3];
         for (int i = 0; i < input.length(); i++) {
             digits[i] = Digit.parse(input.charAt(i));

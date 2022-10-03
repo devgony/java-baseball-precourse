@@ -47,4 +47,4 @@
 - [x] test: add Digit case {shouldParseDigitCharToDigit, shouldThrowExceptionWithNonDigitChar}
 - [x] rector: split Digits.parse and Digit.parse
 - [x] test: add a Digits case digitsMoreOrLessThanThreeThrowException
-- 
+- [x] feat: add Digits.validate(int length, String payload)
